@@ -16,7 +16,7 @@ La métrica utilizada como señal principal fue la complejidad ciclomática, pue
 # Envios Service — Diagnóstico y Mejora Guiada por Métricas
 
 ## Decisiones de diseño
-1. Entorno de análisis: Se selecciona Docker local por ser el proyecto lo suficientemente pequeño o poco exigente como para que resulte razonable analizarlo localmente, ademas de la mayor libertad que supone no estar bajo el servicio gratuito de SonarCloud.
+1. Entorno de análisis: Se selecciona SonarQube Community Edition ejecutado localmente mediante Docker. Esta configuración permite controlar el entorno de análisis, su configuración y la ejecución de las evaluaciones sin depender de un servicio alojado externamente. Además, el alcance del proyecto hace viable mantener esta infraestructura local.
    
 2. Exclusiones del análisis: Se excluye la clase App.java por no contener logica que se quiera cubrir, para evitar que su presencia distorsione las metrica de cobertura.
    
@@ -53,7 +53,7 @@ Por otro lado, se selecciona 70% de cobertura mínima como un compromiso entre u
 | Métrica | Antes (Parte 1) | Después (Parte 2) |
 |---------|------------------|--------------------|
 | Complejidad ciclomática de calcularCosto() | 20 | 5 |
-| Cobertura de ramas de la lógica de envío | 23.8% | 100% |
+| Cobertura de ramas de la lógica de envío | 18.4% | 100% |
 | Code Smells | 0 | 0 |
 | Quality Gate | — | Failed |
 
